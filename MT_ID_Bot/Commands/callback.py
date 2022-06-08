@@ -3,7 +3,7 @@ from pyrogram import Client as MT_ID_Bot
 from MT_ID_Bot.Translation import Translation
 from MT_ID_Bot.Config import Config
 from MT_ID_Bot.Commands.Buttons import START_BUTTON, HELP_BUTTON, ABOUT_BUTTON
-from MT_ID_Bot.Commands.Commands import developer, co_developer, source, mt_chat, mt_bot
+from MT_ID_Bot.Commands.Commands import developer, co_developer, source, mt_channel, mt_group
 from MT_ID_Bot.Modules.Buttons import ID_BUTTONS, INFO_BUTTONS
 
 BOT_USERNAME=Config.BOT_USERNAME # ReStart Option 
@@ -35,7 +35,7 @@ async def cb_handler(client, query):
         await query.answer()
 
         await query.message.edit_text(
-            Translation.ABOUT_MSG.format(BOT_USERNAME, developer, co_developer, mt_chat, mt_bot, source),
+            Translation.ABOUT_MSG.format(BOT_USERNAME, developer, co_developer, mt_channel, mt_group, source),
             reply_markup=ABOUT_BUTTON,
             disable_web_page_preview=True
         )
